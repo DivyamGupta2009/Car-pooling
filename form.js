@@ -46,9 +46,11 @@ class Form{
         this.button4.style('height','50px');
         this.button4.style('width','80px');
         this.button4.style('background-color','#FF9234');
+        this.button5 = createButton('Home screen');
+        this.button5.style('width','80px');
+        this.button5.style('background-color','#FF9234');
     }
-    hide(){
-       
+    hide(){       
         this.title.hide();
         this.input2.hide();
         this.input3.hide();
@@ -59,14 +61,15 @@ class Form{
         this.input6.hide();
         this.input7.hide();
         this.input8.hide();
-        this.button4.hide();
+        this.button5.hide();
         this.button.hide();
-
-      }
+        this.title4.hide();
+        this.button4.hide();
+    }
 
     display(){
-    this.title.html("Hello! Welcome to the car pooling app.");
-    this.title.position(displayWidth/2-130, 0);
+    this.title.html("Hello! Welcome to the HUM RAHI car pooling app.");
+    this.title.position(displayWidth/4+120, 0);
 
     this.button.position(displayWidth/2, displayHeight/2);
 
@@ -96,10 +99,10 @@ class Form{
         this.button3.hide();
         this.title2.hide();
 
-        this.input5.position(displayWidth/2, displayHeight/4);
+        this.input5.position(displayWidth/2-80, displayHeight/4+80);
         this.input6.position(displayWidth/4, displayHeight/2);
         this.input7.position(displayWidth/4+displayWidth/2, displayHeight/2);
-        this.input8.position(displayWidth/2, displayHeight/4+displayHeight/2);
+        this.input8.position(displayWidth/2-60, displayHeight/4+displayHeight/2);
         this.button4.position(displayWidth/2, displayHeight/2);
 
     })
@@ -127,11 +130,22 @@ class Form{
       this.input8.hide();
       this.button4.hide();
      this.title4.html('Registration done!! You get to know when you get a passenger.');
-     this.title4.position(displayWidth/2-180, displayHeight/2-30);
+     this.title4.position(displayWidth/2-230, displayHeight/2-30);
+     this.button4.position(displayWidth/2, displayHeight/2+displayHeight/4);
      game.update(1);
      player.name = this.input.value();
      player.update();
     })
+
+     this.button5.mousePressed(()=>{
+       this.title4.hide();
+       this.button4.hide();
+
+       this.title.position(displayWidth/2-130, 0);
+       this.button.position(displayWidth/2, displayHeight/2);
+     });
+
+    
     
     }
 }
